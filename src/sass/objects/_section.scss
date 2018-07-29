@@ -1,0 +1,14 @@
+.o-section {
+    padding: {
+        top: 120px;
+        bottom: 120px;
+    }
+    
+    @media screen and ( max-width: $tablet + px ) {
+        padding: {
+            top: 60px;
+            bottom: 60px;
+        }
+    }
+    
+}

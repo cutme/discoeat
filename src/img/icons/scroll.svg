@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/scroll-down/white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon/scroll-down/white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Scroll-down-" transform="translate(6.578947, 0.000000)" fill="#FFFFFF">
+            <g id="Group-2" transform="translate(0.421053, 0.000000)">
+                <rect id="Rectangle-7" x="4" y="3" width="2" height="3" rx="1"></rect>
+                <path d="M5,1.01253918 C2.7658833,1.01253918 0.954773869,2.93322357 0.954773869,5.30250784 L0.954773869,11.6974922 C0.954773869,14.0667764 2.7658833,15.9874608 5,15.9874608 C7.2341167,15.9874608 9.04522613,14.0667764 9.04522613,11.6974922 L9.04522613,5.30250784 C9.04522613,2.93322357 7.2341167,1.01253918 5,1.01253918 Z M5,0 C7.76142375,-5.62072158e-16 10,2.37401362 10,5.30250784 L10,11.6974922 C10,14.6259864 7.76142375,17 5,17 C2.23857625,17 3.1800358e-16,14.6259864 0,11.6974922 L0,5.30250784 C-3.1800358e-16,2.37401362 2.23857625,5.62072158e-16 5,0 Z" id="Rectangle-6" fill-rule="nonzero"></path>
+            </g>
+            <polygon id="Rectangle-8" fill-rule="nonzero" transform="translate(5.370800, 18.949747) rotate(45.000000) translate(-5.370800, -18.949747) " points="7.73888521 15.4497475 8.8708001 15.4497475 8.8708001 22.4497475 1.8708001 22.4497475 1.8708001 21.3178326 7.73888521 21.3178326"></polygon>
+        </g>
+    </g>
+</svg>

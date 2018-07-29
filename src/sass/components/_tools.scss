@@ -1,0 +1,38 @@
+.c-tools {
+
+    img {
+        margin: 0 auto;
+    }
+
+    .c-article {
+        margin: 0 0 0 auto;
+        text-align: right;
+    }
+    
+    .o-header {
+        &:after {
+            left: auto;
+            right: 0;
+        }
+    }
+    
+    .o-columns {
+        @media screen and ( min-width: $tablet + 1px ) {
+            flex-direction: row-reverse;
+    
+            &__item {
+                &--image {
+                    width: 60%;
+                }
+                
+                &--article {
+                    width: 40%;
+                }
+            }
+        }
+    }
+    
+    .swiper-pagination {
+        left: 20px;
+    }
+}

@@ -1,0 +1,80 @@
+.c-top {
+    @include z-index(top);
+    @extend %abs;
+    @extend %flex;
+    justify-content: flex-end;
+    width: calc(100% - 96px);
+    right: 48px; top: 32px;
+    
+    .c-login {
+        @media screen and ( min-width: $tablet + 1px ) {
+            margin-right: 60px;
+        }
+        
+        @media screen and ( max-width: $tablet + px ) {
+            margin-bottom: 20px;
+            
+            &:after {
+                display: none;
+            }
+        }
+        
+        &:after {
+            @extend %abs;
+            @extend %abs-after;
+            top: 0;
+            right: -30px;
+            width: 1px;
+            height: 100%;
+            background-color: white;
+        }
+    }
+    
+    .c-login,
+    .c-lang {
+        a {
+            @extend %ulink;
+        
+            &:after, &:before {
+                background-color: white;
+                
+                @media screen and ( max-width: $tablet + px ) {
+                    background-color: $c-black1;
+                }
+                
+                .mobile & {
+                    display: none;
+                }
+            }
+            
+        }
+    }
+    
+    @media screen and ( max-width: $tablet + px ) {
+        position: fixed;
+        z-index: 110;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    	align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+        z-index: -1;
+        overflow: hidden;
+    }
+    
+    
+    &.is-mobile {
+        @extend %flex-xy;
+        @extend %anim;
+        opacity: 1;
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+        z-index: 110;
+    }
+}

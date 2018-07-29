@@ -1,0 +1,40 @@
+.c-lang {
+    @extend %flex;
+    font-size: rem(20);
+    
+    li {
+        @extend %flex;
+        @extend %flex-y;
+        @extend %rel;
+        padding: 0 10px;
+        text-transform: uppercase;
+        color: white;
+        
+        @media screen and ( max-width: $tablet + px ) {
+            color: $c-black1;
+        }
+     
+        &:not(:last-child) {
+            &:after {
+                @extend %abs;
+                @extend %abs-y;
+                @extend %abs-after;
+                right: 0;
+                width: 1px;
+                height: 20px;
+                background-color: white;
+                
+                @media screen and ( max-width: $tablet + px ) {
+                    background-color: $c-black1 ;
+                }
+            }
+        }
+
+        &.current-menu-item {
+            a {
+                font-weight: $bold;
+                color: $c-red1;
+            }
+        }
+    }
+}

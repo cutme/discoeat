@@ -1,0 +1,75 @@
+.o-btn {
+    @extend %anim;
+    @extend %antialias;
+    @extend %flex;
+    @extend %rel;
+    
+    &--bigred {
+        @extend %flex-wrap;
+        @extend %flex-xy;
+        flex-direction: row;
+        height: 75px;
+        background-color: $c-red1;
+    	box-shadow: 0 0 5px 0 rgba(black, .5);
+        color: white;
+        
+        &:hover {
+            .desktop & {
+                background-color: lighten($c-red1, 5%);
+            	box-shadow: 0 0 45px 0 rgba(black, .5);
+            }
+        }
+        
+        > div {
+            width: 100%;
+        }
+        
+        span {
+            display: block;
+            width: 100%;
+            text-align: center;
+    
+            &:first-of-type {
+                
+                font: {
+                    size: rem(20);
+                    weight: $bold;
+                }
+            }
+            
+            &:last-of-type {
+                font-size: rem(12);
+            }
+        }
+    }
+    
+    &--ovalred {
+        @extend %flex-xy;
+        @extend %ulink;
+        height: 35px;
+        width: 214px;
+        border: 1px solid $c-red1;
+        border-radius: 20px;
+        padding-bottom: 2px;
+        text-align: center;
+        font-weight: normal;
+        overflow: hidden;
+        color: $c-red1;
+        
+        &:after, &:before {
+            z-index: -1;
+            background-color: $c-red1;
+        }
+    
+        &:before {
+            bottom: 0;
+            height: 100%;
+        }
+    
+        &:hover {
+            .desktop & {
+                color: white;
+            }
+        }
+    }
+}

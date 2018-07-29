@@ -1,0 +1,58 @@
+[class^="icon-"], [class*=" icon-"] {
+	@extend %icomoon;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+.swiper-pagination {
+    z-index: 20;
+    
+    @media screen and ( min-width: $tablet + 1px ) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    @media screen and ( max-width: $tablet + px ) {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+    }
+    
+    .swiper-pagination-bullet {
+        @extend %anim;
+        display: block;
+        width: 40px;
+        height: 10px;
+        background-color: $c-red2;
+        
+        cursor: pointer;
+        
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+        
+        @media screen and ( min-width: $tablet + 1px ) {
+            width: 10px;
+            height: 40px;
+            margin-bottom: 24px;
+            
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+        
+        &.swiper-pagination-bullet-active {
+            background-color: $c-red1;
+        }
+    }
+}
+
+.swiper-container {
+    @media screen and ( min-width: $tablet + 1px ) {
+        max-height: 600px;
+        overflow: hidden;
+    }
+}

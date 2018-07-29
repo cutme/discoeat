@@ -1,0 +1,53 @@
+.c-topphoto {
+    @extend %rel;
+    background: {
+        image: url(../img/topphoto.jpg);
+        size: cover;
+        color: red;
+        position: center;
+    }
+    color: white;
+    
+    &:after {
+        @extend %abs;
+        @extend %abs-after;
+        z-index: 1;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(36,36,36,0.3);
+    }
+    
+    .o-header {
+        margin-bottom: 40px;
+        
+        @media screen and ( min-width: $smartphone + 1px ) {
+            width: 470px;
+        }
+        
+        
+        &__primary {
+            transition-delay: 500ms;
+            margin-bottom: 40px;
+        }
+        
+        &__third {
+            transition-delay: 700ms;
+            line-height: 2em;
+        }
+    }
+    
+    .o-wrap {
+        @extend %rel;
+        padding-top: 150px;
+        
+        @media screen and ( min-height: 641px ) {
+            height: 100vh;
+        }
+        
+        @media screen and ( max-width: 375px ) {
+            padding-top: 100px;
+        }
+    }
+}
+
+

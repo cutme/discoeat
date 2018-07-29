@@ -1,0 +1,38 @@
+.c-scroll {
+    @extend %anim;
+    @extend %flex;
+    @extend %flex-y;
+    transition-delay: 900ms;
+    opacity: 0;
+    padding: 20px 0 40px 0;
+    
+    @media screen and ( min-height: 641px ) {
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        bottom: 32px;
+    }
+    
+    .pace-done & {
+        opacity: 1;
+    }
+    
+    span {
+        margin-right: 20px;
+        text-transform: uppercase;
+        font-weight: $light;
+    }
+    
+    .icon-scroll {
+        animation: scroll 1s infinite;
+        font-size: rem(38);
+    }
+    
+    @media screen and ( max-width: 1370px ) {
+        left: 85px;
+    }
+    
+    @media screen and ( max-width: $smartphone + px ) {
+        left: 32px;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<%= require('html-loader!./includes/head.html') %>
+
+    <div class="c-top js-top">
+        <a href="/restaurant" class="c-own o-btn o-btn--ovalred">Own a restaurant?</a>
+        
+        <a href="/jobs" class="c-hiring">We're hiring!</a>
+        
+        <ul class="c-lang">
+            <li class="current-menu-item">
+                <a href="#">en</a>
+            </li>
+            
+            <li>
+                <a href="#">de</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div itemprop="mainContentOfPage" role="main" class="o-container is-hidden">
+
+        <a href="signup.html" class="c-logo">
+            <img src=<%= require("./img/logo-discoeat--black.svg") %> alt="DiscoEat" width="246" height="30">
+        </a>
+
+        <div class="c-signup js-fullHeight">
+            <div class="o-wrap">
+                <div class="c-signup__content">
+                    
+                    <header class="o-header">
+                        <h1 class="o-header__primary">Ready to discover with discounts?</h1>
+                        <h4 class="o-header__third">
+A whole new way to book restaurants is about to arrive. Leave us your email and get notified when we launch…
+                        </h4>
+                    </header>
+                    
+                    
+                    <div class="c-contactform">
+                        <form action="#" class="js-validate" novalidate>                                        
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="your-email@example.com">
+                                    <label>Email address</label>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="form-row">
+                                <button type="submit" class="o-btn o-btn--bigred">
+                                    <div>
+                                        <span>Be the first to know</span>
+                                        <span>..and get ready to eat great food!</span>
+                                    </div>
+                                </button>
+                            </div>
+                            
+                            <div class="form-row">
+                                <input type="checkbox" id="agree" name="agree">
+                                <label for="agree">
+                                    <i></i>
+                                    <span>I agree to the terms and conditions</span>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+                           
+        </div>
+    </div>
+
+
+    <div class="o-hamburger js-hamburger"></div>
+
+
+<%= require('html-loader!./includes/footer.html') %>

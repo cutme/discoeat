@@ -1,0 +1,37 @@
+body {
+	line-height: 1.5;
+	text-rendering: optimizeSpeed;
+	font: {
+		family: $text;
+		size: #{$base-font-size}px;
+		weight: $light;
+	}
+	color: $c-black1;
+}
+
+a {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	
+	&:hover,
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+cite {
+    display: block;
+    font-style: italic;
+}
+
+strong {
+    font-weight: $bold;
+}
+
+
+::selection {
+	background-color: $c-red1;
+	color: white;
+}

@@ -1,0 +1,20 @@
+.c-contact {
+    background-color: $c-gray2;
+    
+    .o-header {
+        
+        @media screen and ( min-width: $tablet + 1px ) {
+            margin-top: -24px;
+        
+        }
+        
+        @media screen and ( max-width: $tablet + px ) {
+            margin-bottom: 40px;
+        }
+
+        &__huge {
+            color: white;
+            
+        }
+    }
+}

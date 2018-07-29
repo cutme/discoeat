@@ -1,0 +1,19 @@
+.c-logo {
+    @extend %abs;
+    @include z-index(logo);
+    left: 48px; top: 32px;
+    display: block;
+    width: 246px; height: 30px;
+    
+    @media screen and ( max-width: $tablet_portrait + px ) {
+        top: 20px;
+    }
+    
+    @media screen and ( max-width: $smartphone + px ) {
+        left: 32px;
+    }
+    
+    @media screen and ( max-width: 375px ) {
+        width: 200px;
+    }
+}

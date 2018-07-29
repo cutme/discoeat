@@ -1,0 +1,17 @@
+.c-how {
+    .c-article {
+        @media screen and ( min-width: $tablet + 1px ) {
+            width: grid(470, 600);
+        }
+    }
+    
+    .o-columns__item--image {
+        padding-right: 20px;
+    }
+    
+    .swiper-pagination {
+        right: 20px;
+    }
+    
+    
+}

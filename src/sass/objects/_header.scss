@@ -1,0 +1,113 @@
+.o-header {
+
+    &__primary,
+    &__secondary,
+    &__fourth,
+    &__huge {
+        @include antialias;
+        line-height: 1.25em;
+    }
+    
+    &__huge {
+        font: {
+            size: rem(90);
+            weight: $bold;
+        }
+        
+        @media screen and ( max-width: $base2 + px ) {
+            font-size: get-vw-base2(90);
+        }
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            font-size: rem(45);
+        }
+        
+        @media screen and ( max-width: 375px ) {
+            font-size: rem(28);
+        }
+    }
+
+    &__primary {
+        font: {
+            size: rem(70);
+            weight: $bold;
+        }
+        
+        @media screen and ( max-width: $base2 + px ) {
+            font-size: get-vw-base2(70);
+        }
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            font-size: get-vw-tablet-portrait(70);
+        }
+    }
+    
+    &__secondary {
+        font: {
+            size: rem(40);
+            weight: $bold;
+        }
+        
+        @media screen and ( max-width: $base2 + px ) {
+            font-size: get-vw-base2(40);
+        }
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            font-size: rem(35);
+        }
+        
+        @media screen and ( max-width: 375px ) {
+            font-size: rem(28);
+        }
+    }
+    
+    &__third {
+        font: {
+            size: rem(25);
+        }
+        
+        @media screen and ( min-width: $tablet_portrait + 1px ) and ( max-width: $base2 + px ) {
+            font-size: get-vw-base2(25);
+        }
+        
+        @media screen and ( min-width: $tablet_portrait + 1px ) and ( max-width: $base + px ) {
+            font-size: get-vw-base(25);
+        }
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            //font-size: rem(45);
+            font-size: get-vw-tablet-portrait(25);
+        }
+        
+        @media screen and ( max-width: $smartphone_portrait + px ) {
+            font-size: rem(15);
+        }
+    }
+    
+    &__fourth {
+        font: {
+            size: rem(20);
+            weight: $bold;
+        }
+    }
+    
+    &--section {
+        @extend %rel;
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+        
+        &:after {
+            @extend %abs;
+            @extend %abs-after;
+            left: 0; bottom: 0;
+            width: 72px; height: 5px;
+            background-color: $c-red1;
+        }
+
+        .o-header__fourth {
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            color: $c-red1;
+        }
+    }
+}

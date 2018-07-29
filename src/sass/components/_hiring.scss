@@ -1,0 +1,29 @@
+.c-hiring {
+    @extend %ulink;
+    @extend %anim;
+    
+    border-bottom: 1px solid $c-black1;
+    font: {
+        size: rem(20);
+        style: italic;
+    }
+    color: $c-black1;
+    
+    @media screen and ( min-width: $tablet + 1px ) {
+        position: absolute;
+        left: 286px; top: 0;
+    }
+    
+    @media screen and ( max-width: $tablet + px ) {
+        margin: 15px 0;
+    }
+        
+    &:after, &:before {
+        bottom: -1px;
+        background-color: $c-red1;
+    }
+    
+    &:hover {
+        color: $c-red1;
+    }
+}

@@ -1,0 +1,43 @@
+.c-contactform {
+    .form-row {
+        margin-bottom: 16px;
+    }
+    
+    .form-group {
+        @extend %rel;
+        background-color: white;
+        height: 75px;
+        
+        label, input {
+            @extend %abs;
+            left: 15px;
+            width: calc(100% - 30px);
+        }
+        
+        label {
+            top: 10px;
+            text-transform: uppercase;
+            font: {
+                size: rem(12);
+                weight: normal;
+            }
+        }
+        
+        input {
+            bottom: 14px;
+            height: 24px;
+            line-height: $medium;
+            font-size: rem(20);
+        }
+        
+        &.has-error {
+            border: 2px solid $c-red1;
+        }
+    }
+    
+    .o-btn {
+        width: 100%;
+    }
+}
+
+

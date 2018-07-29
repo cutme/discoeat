@@ -1,0 +1,72 @@
+.o-hamburger {
+    @include z-index(hamburger);
+    @extend %anim;
+    position: fixed;
+    right: 48px; top: 40px;
+    width: 25px;
+    height: 19px;
+    border-top: 1px solid $c-black1;
+    cursor: pointer;
+
+    @media screen and ( min-width: $tablet + 1px ) {
+        display: none;
+    }
+    
+    @media screen and ( max-width: $tablet_portrait + px ) {
+        top: 26px;
+    }
+    
+    @media screen and ( max-width: $smartphone + px ) {
+        right: 32px;
+    }
+    
+    @media screen and ( max-width: 375px ) {
+        top: 22px;
+    }
+    
+
+    &:after, &:before {
+        @extend %abs;
+        @extend %abs-after;
+        @extend %anim;
+        width: 100%; 
+        height: 1px;
+        background-color: $c-black1;        
+    }
+    
+    &:after {
+        transform-origin: right;
+        top: 100%;
+    }
+    
+    &:before {
+        transform-origin: left;
+        top: calc(50% - 1px);
+    }
+    
+    &.is-active {
+        border-color: transparent !important;
+
+        &:after {
+            transform: rotate(45deg) translate(-2px, 2px);
+        }
+        
+        &:before {
+            transform: rotate(-45deg) translate(-5px, 10px);            
+        }
+    }
+    
+    &--white {
+        border-top-color: white;
+        
+        &:after, &:before {
+            background-color: white;
+        }
+        
+        &.is-active {    
+            &:after, &:before {
+                background-color: $c-black1;
+            }
+        }
+    }
+}

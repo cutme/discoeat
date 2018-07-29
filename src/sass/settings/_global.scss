@@ -1,0 +1,43 @@
+// Fonts
+
+$montserrat:  'Montserrat', sans-serif;
+$icons:		'icomoon';
+
+
+// Default
+
+$text:		$montserrat;
+
+
+
+// Font weights
+
+$light:             300;
+$regular:           400;
+$medium:            500;
+$bold:              700;
+
+
+$z-index: (
+    hamburger:      120,
+	logo:           20,
+	touch:          100,
+	top:            110
+);
+
+
+
+// Default
+
+$base-font-size:	15;
+$base:				1200;
+$base2:				1440;
+
+
+// RWD
+
+$menu:	      			1460;
+$tablet:				1024;
+$tablet_portrait:		768;
+$smartphone:			640;
+$smartphone_portrait:	480;
