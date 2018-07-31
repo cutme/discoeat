@@ -1,0 +1,8 @@
+.c-cover {
+    @extend %anim;
+    
+
+    .pace-done & {
+        opacity: 0;
+    }
+}

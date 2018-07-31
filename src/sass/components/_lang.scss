@@ -10,6 +10,10 @@
         text-transform: uppercase;
         color: white;
         
+        .c-top--black & {
+            color: $c-black1;
+        }
+        
         @media screen and ( max-width: $tablet + px ) {
             color: $c-black1;
         }
@@ -26,6 +30,10 @@
                 
                 @media screen and ( max-width: $tablet + px ) {
                     background-color: $c-black1 ;
+                }
+                
+                .c-top--black & {
+                    background-color: $c-black1;
                 }
             }
         }

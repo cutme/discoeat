@@ -10,6 +10,10 @@
         padding: 0 10px;
         color: white;
         
+        .c-top--black & {
+            color: $c-black1;
+        }
+        
         @media screen and ( max-width: $tablet + px ) {
             color: $c-black1;
         }
@@ -25,6 +29,10 @@
                 background-color: white;
                 
                 @media screen and ( max-width: $tablet + px ) {
+                    background-color: $c-black1;
+                }
+                
+                .c-top--black & {
                     background-color: $c-black1;
                 }
             }

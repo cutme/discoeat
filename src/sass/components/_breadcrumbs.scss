@@ -1,0 +1,29 @@
+.c-breadcrumbs {
+    margin-bottom: 60px;
+
+    a {
+        @extend %ulink;
+        color: $c-red1;
+        
+        &:after, &:before {
+            bottom: -1px;
+            background-color: $c-red1;
+        }
+    }
+    
+    span {
+        @extend %antialias;
+        @extend %rel;
+        margin-left: 20px;
+        font-weight: $medium;
+
+        &:before {
+            @extend %abs;
+            @extend %abs-after;
+            left: -15px; top: 0;
+            font-weight: $medium;
+            content: '>';
+        }
+    }
+}
+

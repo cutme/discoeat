@@ -1,0 +1,41 @@
+.c-footer {
+    background-color: $c-gray1;
+    padding: 40px 0;
+    
+    &__copy {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: $regular;
+        
+        span {
+            color: $c-red1;
+        }
+    }
+    
+    &__nav {
+        margin-bottom: 15px;
+
+        ul {
+            @extend %flex;
+            @extend %flex-x;
+        }
+        
+        li {
+            padding: 0 10px;
+        }
+        
+        a {
+            @extend %ulink;
+            @extend %antialias;
+            font-weight: $regular;
+            color: $c-red1;
+            
+            &:after, &:before {
+                bottom: -1px;
+                background-color: $c-red1;
+            }
+        }
+    }
+    
+    
+}

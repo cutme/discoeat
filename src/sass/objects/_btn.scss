@@ -47,10 +47,10 @@
         @extend %flex-xy;
         @extend %ulink;
         height: 35px;
-        width: 214px;
+        min-width: 214px;
         border: 1px solid $c-red1;
         border-radius: 20px;
-        padding-bottom: 2px;
+        padding: 0 20px 2px 20px;
         text-align: center;
         font-weight: normal;
         overflow: hidden;

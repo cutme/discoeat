@@ -3,7 +3,7 @@
 <%= require('html-loader!./includes/head.html') %>
 
     <div class="c-top js-top">
-        <a href="/restaurant" class="c-own o-btn o-btn--ovalred">Own a restaurant?</a>
+        <a href="signup.html" class="c-own o-btn o-btn--ovalred">For restaurant owners</a>
         
         <a href="/jobs" class="c-hiring">We're hiring!</a>
         
@@ -17,13 +17,14 @@
             </li>
         </ul>
     </div>
+    
+    
+    <a href="signup.html" class="c-logo">
+        <img src=<%= require("./img/logo-discoeat--black.svg") %> alt="DiscoEat" width="246" height="30">
+    </a>
 
 
-    <div itemprop="mainContentOfPage" role="main" class="o-container is-hidden">
-
-        <a href="signup.html" class="c-logo">
-            <img src=<%= require("./img/logo-discoeat--black.svg") %> alt="DiscoEat" width="246" height="30">
-        </a>
+    <div itemprop="mainContentOfPage" role="main" class="o-container is-hidden">        
 
         <div class="c-signup js-fullHeight">
             <div class="o-wrap">
@@ -56,7 +57,7 @@ A whole new way to book restaurants is about to arrive. Leave us your email and 
                                 </button>
                             </div>
                             
-                            <div class="form-row">
+                            <div class="form-row has-error">
                                 <input type="checkbox" id="agree" name="agree">
                                 <label for="agree">
                                     <i></i>
@@ -75,4 +76,6 @@ A whole new way to book restaurants is about to arrive. Leave us your email and 
     <div class="o-hamburger js-hamburger"></div>
 
 
-<%= require('html-loader!./includes/footer.html') %>
+
+</body>
+</html

@@ -1,6 +1,7 @@
 .c-top {
     @include z-index(top);
     @extend %abs;
+    z-index: 6;
     @extend %flex;
     justify-content: flex-end;
     width: calc(100% - 96px);
@@ -27,6 +28,14 @@
             width: 1px;
             height: 100%;
             background-color: white;
+        }
+    }
+    
+    &--black {
+        .c-login {
+            &:after {
+                background-color: $c-black1;
+            }
         }
     }
     

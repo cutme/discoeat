@@ -16,6 +16,7 @@ const minify = {
 
 module.exports = {
    entry: {
+        text: "./src/text.js",
         index: "./src/index.js",
         signup: "./src/signup.js"
     },
@@ -84,7 +85,7 @@ module.exports = {
           threads: 4,
           loaders: ['babel-loader?presets[]=env']
         }),
-
+		
 		new HtmlWebpackPlugin({
 		    filename: 'index.html',
 		    cache: false,
@@ -98,6 +99,14 @@ module.exports = {
 		    cache: false,
     		chunks: ['commons', 'signup'],
             template: './src/signup.html',
+            minify: false
+		}),
+		
+		new HtmlWebpackPlugin({
+		    filename: 'text.html',
+		    cache: false,
+    		chunks: ['commons', 'text'],
+            template: './src/text.html',
             minify: false
 		}),
 		

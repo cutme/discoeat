@@ -1,6 +1,14 @@
 .c-contactform {
     .form-row {
         margin-bottom: 16px;
+        
+        &.has-error {
+            label {
+                span {
+                    color: $c-red1;
+                }
+            }
+        }
     }
     
     .form-group {

@@ -11,12 +11,13 @@
 
 <body style="overflow: hidden" itemscope="itemscope" itemtype="https://schema.org/WebPage">
 
-	
+	<div class="c-cover" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 120; background-color: white;" id="cover"></div>
+
 
 
 
     <div class="c-top js-top">
-        <a href="/restaurant" class="c-own o-btn o-btn--ovalred">Own a restaurant?</a>
+        <a href="signup.html" class="c-own o-btn o-btn--ovalred">For restaurant owners</a>
         
         <a href="/jobs" class="c-hiring">We're hiring!</a>
         
@@ -30,13 +31,14 @@
             </li>
         </ul>
     </div>
+    
+    
+    <a href="signup.html" class="c-logo">
+        <img src=img/logo-discoeat--black.svg alt="DiscoEat" width="246" height="30">
+    </a>
 
 
-    <div itemprop="mainContentOfPage" role="main" class="o-container is-hidden">
-
-        <a href="signup.html" class="c-logo">
-            <img src=img/logo-discoeat--black.svg alt="DiscoEat" width="246" height="30">
-        </a>
+    <div itemprop="mainContentOfPage" role="main" class="o-container is-hidden">        
 
         <div class="c-signup js-fullHeight">
             <div class="o-wrap">
@@ -69,7 +71,7 @@ A whole new way to book restaurants is about to arrive. Leave us your email and 
                                 </button>
                             </div>
                             
-                            <div class="form-row">
+                            <div class="form-row has-error">
                                 <input type="checkbox" id="agree" name="agree">
                                 <label for="agree">
                                     <i></i>
@@ -89,10 +91,5 @@ A whole new way to book restaurants is about to arrive. Leave us your email and 
 
 
 
-
-
-    <div style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 120; background-color: white;" id="cover">
-
 <script type="text/javascript" src="commons.bundle.js"></script><script type="text/javascript" src="index.bundle.js"></script></body>
-</html>
-
+</html

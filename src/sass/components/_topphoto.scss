@@ -21,10 +21,9 @@
         margin-bottom: 40px;
         
         @media screen and ( min-width: $smartphone + 1px ) {
-            width: 470px;
+            width: 550px;
         }
-        
-        
+
         &__primary {
             transition-delay: 500ms;
             margin-bottom: 40px;

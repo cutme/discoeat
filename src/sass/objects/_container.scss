@@ -1,11 +1,9 @@
 .o-container {
     @extend %anim;
-    transform: translate3d(0, 0, 0);
-    overflow: hidden;
-    opacity: 1;
-
-    &.is-hidden {
-        transform: translate3d(0, 20px, 0);
-        opacity: 0;
+//    overflow: hidden;
+    
+    &--subsite {
+        padding-top: 100px;
     }
 }
+

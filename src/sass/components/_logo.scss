@@ -1,5 +1,6 @@
 .c-logo {
     @extend %abs;
+    @extend %anim;
     @include z-index(logo);
     left: 48px; top: 32px;
     display: block;
