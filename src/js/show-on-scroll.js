@@ -9,7 +9,7 @@ const showonscroll = function() {
     const initCarousel = function(el) {
     
         const pages = el.parentNode.getElementsByClassName('swiper-pagination')[0];
-        let swiper, status = false, ww = window.innerWidth;
+        let swiper, status = false, scrollStatus = true, ww = window.innerWidth;
         
         const horizontal = function() {
             swiper = new Swiper (el, {
@@ -27,8 +27,10 @@ const showonscroll = function() {
         
         const vertical = function() {
             swiper = new Swiper (el, {
-                autoplay: {
-                    delay: 5000,
+                mousewheel: {
+                    forceToAxis: true,
+                    releaseOnEdges: false,
+                    invert: true
                 },
                 direction: 'vertical',
                 loop: true,
@@ -40,17 +42,50 @@ const showonscroll = function() {
             });
         }
     
-        if (ww <= 1024) {
-            horizontal();
-        } else {
-            vertical();
+
+        
+        const enableDisableCaroScroll = function() {
+        
+            if (ww <= 1200) {
+               if (scrollStatus === true) {
+               
+                    swiper.mousewheel.disable();
+                    swiper.autoplay.start();
+                    scrollStatus = false;
+                    console.log('disableCaroScroll');
+                    
+                }
+            
+            } else {
+               if (scrollStatus === false) {
+               
+                    swiper.mousewheel.enable();
+                    swiper.autoplay.stop();
+                    scrollStatus = true;
+                    console.log('enableCaroScroll');
+                
+                }
+            }
         }
         
         
+        
+        if (ww <= 1024) {
+            horizontal();
+            
+        } else {
+            vertical();
+            
+        }
+        
+        enableDisableCaroScroll();
+
+
+
         window.addEventListener('resize', function() {
             
            ww = window.innerWidth;
-           
+
            if (ww <= 1024) {
                if (status === false) {
                    swiper.destroy();
@@ -70,10 +105,15 @@ const showonscroll = function() {
                    
                    setTimeout(function() {
                        vertical();
+                       
                    }, 10);
                
                }
            }
+           
+           setTimeout(function() {
+               enableDisableCaroScroll();
+           }, 100);
             
         });
           

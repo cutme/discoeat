@@ -10,7 +10,7 @@
         @media screen and ( min-width: $tablet + 1px ) {
             &.is-hidden {
                 transition-delay: 1200ms;
-                transform: translate3d(-50%, 100%, 0);
+                transform: translate3d(-50%, 140%, 0);
                 
                 .pace-done & {
                     transform: translate3d(-50%, 0, 0);

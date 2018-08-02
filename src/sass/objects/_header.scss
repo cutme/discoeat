@@ -71,11 +71,10 @@
         }
         
         @media screen and ( min-width: $tablet_portrait + 1px ) and ( max-width: $base + px ) {
-            font-size: get-vw-base(25);
+           // font-size: get-vw-base(25);
         }
         
         @media screen and ( max-width: $tablet_portrait + px ) {
-            //font-size: rem(45);
             font-size: get-vw-tablet-portrait(25);
         }
         
