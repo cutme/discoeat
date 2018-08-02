@@ -14,10 +14,14 @@
     
     &__nav {
         margin-bottom: 15px;
+        text-align: center;
 
         ul {
-            @extend %flex;
-            @extend %flex-x;
+            @media screen and ( min-width: $smartphone + 1px ) {
+                display: flex;
+                justify-content: center;
+            }
+            
         }
         
         li {

@@ -16,7 +16,7 @@
         background-color: white;
         height: 75px;
         
-        label, input {
+        label, input, textarea {
             @extend %abs;
             left: 15px;
             width: calc(100% - 30px);
@@ -31,11 +31,24 @@
             }
         }
         
+        input, textarea {
+            font-weight: $medium;
+            font-size: rem(20);
+        }
+        
         input {
             bottom: 14px;
             height: 24px;
-            line-height: $medium;
-            font-size: rem(20);
+            
+        }
+        
+        textarea {
+            bottom: 14px;
+            height: calc(100% - 60px);
+        }
+        
+        &--textarea {
+            height: 170px;
         }
         
         &.has-error {

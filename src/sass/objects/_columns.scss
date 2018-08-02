@@ -11,6 +11,10 @@
             width: 50%;
         }
     
-        
+        &--image {
+            @media screen and ( max-width: $tablet + px ) {
+                padding-top: 20px;
+            }
+        }
     }
 }
