@@ -28,12 +28,9 @@ const showonscroll = function() {
         const vertical = function() {
             swiper = new Swiper (el, {
                 mousewheel: {
-                    forceToAxis: true,
-                    releaseOnEdges: false,
-                    invert: true
+                    releaseOnEdges: true,
                 },
                 direction: 'vertical',
-                loop: true,
                 pagination: {
                     el: pages,
                     type: 'bullets',
@@ -46,9 +43,9 @@ const showonscroll = function() {
         
         const enableDisableCaroScroll = function() {
         
-            if (ww <= 1200) {
-               if (scrollStatus === true) {
-               
+            if (ww <= 1024) {
+                if (scrollStatus === true) {
+
                     swiper.mousewheel.disable();
                     swiper.autoplay.start();
                     scrollStatus = false;
@@ -57,7 +54,7 @@ const showonscroll = function() {
                 }
             
             } else {
-               if (scrollStatus === false) {
+                if (scrollStatus === false) {
                
                     swiper.mousewheel.enable();
                     swiper.autoplay.stop();
@@ -66,6 +63,7 @@ const showonscroll = function() {
                 
                 }
             }
+            
         }
         
         
@@ -75,10 +73,10 @@ const showonscroll = function() {
             
         } else {
             vertical();
-            
+            enableDisableCaroScroll();
         }
         
-        enableDisableCaroScroll();
+        
 
 
 
@@ -105,7 +103,7 @@ const showonscroll = function() {
                    
                    setTimeout(function() {
                        vertical();
-                       
+                       enableDisableCaroScroll();
                    }, 10);
                
                }
