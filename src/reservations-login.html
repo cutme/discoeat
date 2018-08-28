@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<%= require('html-loader!./includes/head.html') %>
+
+    <div itemprop="mainContentOfPage" role="main" class="o-container">        
+
+        <div class="c-welcome js-fullHeight">
+        
+            <div class="c-welcome__left">
+
+                <div class="c-welcome__header">
+                    <img src=<%= require("./img/logo-discoeat--black.svg") %> alt="DiscoEat" width="219" height="27">
+                    <p>Welcome to the restaurant platform</p>
+                </div>
+
+                <div class="c-signin">
+                    <form action="#" class="js-validate" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="restaurant_name">
+                                <label>Username</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" name="email" autocomplete="off">
+                                <label>Password</label>
+                            </div>
+                        </div>
+                                               
+                        <div class="form-row form-row--submit">
+                            <button type="submit" class="o-btn o-btn--bigred">
+                                <span>Login</span>
+                            </button>
+                        </div>
+                        
+                        <div class="form-row form-row--forgot">
+                            <a href="#">Oops, I forgot my password</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="c-welcome__right">
+
+            </div>
+        </div>             
+    </div>
+
+
+</body>
+</htm

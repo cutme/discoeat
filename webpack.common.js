@@ -18,7 +18,8 @@ module.exports = {
    entry: {
         text: "./src/text.js",
         index: "./src/index.js",
-        signup: "./src/signup.js"
+        signup: "./src/signup.js",
+        reservations: "./src/reservations.js"
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -91,6 +92,46 @@ module.exports = {
 		    cache: false,
     		chunks: ['commons', 'index'],
             template: './src/index.html',
+            minify: false
+		}),
+		
+		new HtmlWebpackPlugin({
+		    filename: 'reservations-help.html',
+		    cache: false,
+    		chunks: ['commons', 'reservations'],
+            template: './src/reservations-help.html',
+            minify: false
+		}),
+		
+		new HtmlWebpackPlugin({
+		    filename: 'reservations-limit.html',
+		    cache: false,
+    		chunks: ['commons', 'reservations'],
+            template: './src/reservations-limit.html',
+            minify: false
+		}),
+		
+		new HtmlWebpackPlugin({
+		    filename: 'reservations-login.html',
+		    cache: false,
+    		chunks: ['commons', 'reservations'],
+            template: './src/reservations-login.html',
+            minify: false
+		}),
+		
+		new HtmlWebpackPlugin({
+		    filename: 'reservations-upcoming.html',
+		    cache: false,
+    		chunks: ['commons', 'reservations'],
+            template: './src/reservations-upcoming.html',
+            minify: false
+		}),
+		
+		new HtmlWebpackPlugin({
+		    filename: 'reservations-past.html',
+		    cache: false,
+    		chunks: ['commons', 'reservations'],
+            template: './src/reservations-past.html',
             minify: false
 		}),
 		

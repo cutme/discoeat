@@ -1,0 +1,81 @@
+.c-lightbox {
+    @extend %rel;
+    max-width: 836px;
+    background-color: white;
+    padding: 70px 100px 60px 100px;
+    
+    &__close {
+        @extend %abs;
+        display: block;
+        right: 20px; top: 30px;
+        width: 34px; height: 34px;
+        cursor: pointer;
+        
+        &:after,
+        &:before {
+            @extend %abs;
+            @extend %abs-after;
+            width: 34px; height: 1px;
+            background-color: black;
+        }
+        
+        &:after {
+            left: 0; top: 16px;
+            transform: rotate(45deg);
+        }
+        
+        &:before {
+            left: 0; top: 16px;
+            transform: rotate(-45deg);
+        }
+    }
+    
+    &__title {
+        margin-bottom: 30px;
+        line-height: 1.3em;
+        text-align: center;
+        font: {
+            size: rem(35);
+            weight: $bold;
+        }
+    }
+    
+    .c-article {
+        margin-bottom: 30px;
+        text-align: center;
+
+        p {
+            line-height: 1.6em;
+        }
+    }
+    
+    .o-btn {
+        margin: 0 auto;
+    }
+    
+    &__select {
+        width: 436px;
+        margin: 0 auto 30px auto;
+        padding: 0 15px;
+
+        .o-select {
+            margin-bottom: 30px;
+        }
+
+    	.title {
+    	    @extend %antialias;
+    	    margin-bottom: 10px;
+    	    padding-left: 15px;
+    	    text-transform: uppercase;
+        	font-size: rem(12);
+        	font-weight: $regular;
+        	color: $c-black2;
+    	}
+    }
+    
+    &__button {
+        width: 200px;
+        margin: 0 auto;
+    }
+}
+

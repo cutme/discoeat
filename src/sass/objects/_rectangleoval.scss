@@ -1,0 +1,50 @@
+.o-rectangleoval {
+    @extend %flex-y;
+    display: inline-flex;
+    height: 35px;
+    border-radius: 20px;
+    padding: 0 10px;
+    
+    &--promo {
+        background-color: $c-red1;
+        margin-left: 5px;
+        color: white;
+        
+        .icon-help {
+            margin-left: 5px;
+            font-size: rem(16);
+            font-weight: $bold;
+            cursor: pointer;
+        }
+    }
+    
+    &--status {
+        margin: 0 auto;
+        padding: 0 30px; 
+        
+        &.attended {
+            background-color: rgba(167,214,167,0.5);
+        }
+        
+        &.no-show {
+        	background-color: rgba(252,74,63,0.5);
+        }
+        
+        &.upcoming {
+            @extend %anim;
+            transition-duration: 150ms;
+            background-color: rgba(255,230,102,0.6);
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5);
+            cursor: pointer;
+            
+            &:hover {
+                background-color: darken(rgba(255,230,102,0.6), 15%);
+            }
+        }
+        
+        .icon-pencil {
+            margin: 0 -15px 0 5px;
+            font-size: rem(20);
+        }
+    }
+}

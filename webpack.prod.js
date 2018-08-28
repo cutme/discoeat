@@ -6,6 +6,7 @@ const glob = require('glob');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HappyPack = require('happypack');
 const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
+const sourceMap = true;
 
 module.exports = merge(common, {
     module: {
@@ -22,7 +23,7 @@ module.exports = merge(common, {
     },
     plugins: [
         new ExtractTextPlugin('[name].css'),
-        createHappyPlugin('sass', ['css-loader?importLoaders:1!postcss-loader!sass-loader']),
+        createHappyPlugin('sass', ['css-loader?importLoaders:1!group-css-media-queries-loader?options:sourceMap!postcss-loader!sass-loader']),
 
         new webpack.optimize.UglifyJsPlugin({
             comments: false,

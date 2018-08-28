@@ -1,0 +1,11 @@
+.o-list {
+    margin-bottom: 2em;
+
+    &--dash {
+        li {
+            &:before {
+                content: '- ';
+            }
+        }
+    }
+}

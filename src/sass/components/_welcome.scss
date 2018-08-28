@@ -1,0 +1,43 @@
+.c-welcome {
+    @extend %antialias;
+    @extend %flex;
+    
+    &__header {
+        text-align: center;
+        margin-bottom: 40px;
+        
+        img {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        
+        p {
+            font-weight: $regular;
+        }
+    }
+    
+    &__left {
+        @extend %flex;
+        @extend %flex-wrap;
+        @extend %flex-xy;
+        flex-direction: column;
+        width: 590px;
+        padding: 0 77px;
+
+        @media screen and ( max-width: $base2 + px ) {
+            width: grid(590, $base2);
+            padding: 0 grid(77, $base2);
+        }
+        
+    }
+    
+    &__right {
+        flex: 1;
+        background: {
+            image: url(../img/bg-signin.jpg);
+            position: center;
+            repeat: no-repeat;
+            size: cover;
+        }
+    }
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#fff">
+    <title>DiscoEat</title>
+<link href="reservations.css" rel="stylesheet"></head>
+
+<body style="overflow: hidden" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+	<div class="c-cover" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 120; background-color: white;" id="cover"></div>
+
+
+
+
+    <div itemprop="mainContentOfPage" role="main" class="o-container">        
+
+        <div class="c-sidebar">
+        
+            <a href="#" class="c-sidebar__logo">
+                <img src=img/logo-discoeat--black.svg alt="DiscoEat">
+            </a>
+        
+            <nav class="c-sidebar__nav">
+                <ul>
+                    <li>
+                        <a href="#"><i class="icon-dashboard"></i> Dashboard</a>
+                    </li>
+                    
+                    <li class="is-active">
+                        <a href="reservations-upcoming.html"><i class="icon-calendar"></i> Reservations&nbsp;<i class="o-circle o-circle--red">3</i></a>
+                        
+                        <ul>
+                            <li>
+                                <a href="reservations-upcoming.html">Upcoming</a>
+                            </li>
+                            
+                            <li class="is-active">
+                                <a href="reservations-past.html">Past</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="reservations-help.html"><i class="icon-help"></i> Help</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            
+            <div class="c-emergency">
+                <h4 class="c-emergency__title">
+                    <span>Emergency Mode</span>
+                    <a href="#" class="icon-help"></a>
+                </h4>
+                
+                <div class="o-slidecheckbox">
+                    <label class="toggle">
+                        <input type="checkbox">
+                        <div class="slide-toggle"></div>
+                    </label>
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="c-topbar">
+            <div class="o-hamburger js-hamburger"></div>
+        
+            <div class="c-breadcrumbs" id="breadcrumbs">
+                <a href="#">Reservations</a>
+                <a href="#">Past</a>
+                <span class="js-current">Last 24 hours</span>
+            </div>
+        </div>
+
+        <div class="c-reservations">
+        
+            <div class="o-tabs" id="tabs">
+                <ul class="o-tabs__nav js-nav">
+                    <li class="js-tab is-active">Last 24 hours</li>
+                    <li class="js-tab">All past orders</li>
+                </ul>
+                
+                <ul class="o-tabs__content is-active js-content">
+                    <li class="is-active js-tab">
+
+                        <table class="o-table">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>#People</th>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Discount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr class="yellow">
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                </tr>
+                                
+                                <tr class="yellow">
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </li>
+                    
+                    <li class="js-tab">
+
+                        <table class="o-table">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>#People</th>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Discount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr class="yellow">
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status no-show">No show</div></div></td>
+                                </tr>
+                                
+                                <tr class="yellow">
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status attended">Attended</div></div></td>
+                                </tr>
+
+                                <tr>
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status attended">Attended</div></div></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status attended">Attended</div></div></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status no-show">No show</div></div></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status attended">Attended</div></div></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status attended">Attended</div></div></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><div>27-04-18</div></td>
+                                    <td><div>13:00</div></td>
+                                    <td><div>4</div></td>
+                                    <td><div>John Doe long name</div></td>
+                                    <td><div>+49 xxx xxx 888</div></td>
+                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
+
+                                    <td><div><div class="o-rectangleoval o-rectangleoval--status attended">Attended</div></div></td>
+                                </tr>
+                                
+                               
+                            </tbody>
+                        </table>
+                        
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+    </div>
+
+
+    
+    <div class="o-overlay js-overlay" id="changeNumOfPeople">
+        <div class="c-lightbox">
+            
+            <h3 class="c-lightbox__title">
+                How many people<br> showed up?
+            </h3>
+            
+            <article class="c-article">
+                <p>
+Although we take an increasing number of actions to prevent this, it might happen that some people don’t show up. Please always remember that we will double check this update with the customer to make sure that it corresponds to reality.
+                </p>                
+            </article>
+
+            <div class="c-lightbox__select">
+                <p class="title">People who attended</p>
+
+                <div class="o-select">
+                    <select class="o-select__dropdown">
+                        <option value="0">0 (Nobody showed up)</option>
+                        <option value="3">1</option>
+                        <option value="3">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4 (Everybody)</option>
+                    </select>
+                    <span class="icon-arrow-down"></span>
+                </div>
+                
+                <button type="button" class="o-btn o-btn--twolines o-btn--bigred">
+                    <div>
+                        <span>Update # of people</span>
+                        <span>We will verify this change to prevent frauds</span>
+                    </div>
+                </button>
+            </div>
+            
+            <i class="c-lightbox__close js-close"></i>
+        </div>
+    </div>
+
+    
+    <div class="o-overlay js-overlay is-visible" id="limit">
+        <div class="c-lightbox">
+            
+            <h3 class="c-lightbox__title">
+                Limit new orders
+            </h3>
+            
+            <article class="c-article">
+                <p>
+                    <strong>If you proceed, you will:</strong>
+                </p>
+    
+                <ul class="o-list o-list--dash">
+                    <li>Set the availability on DiscoEat to only 1 seat with 10% discount for the next 2 hours</li>
+                    <li>After 2 hours the discount & capacity will go back to normal</li>
+                </ul>                
+
+                <p>
+                    <strong>Please remember that:</strong>
+                </p>
+                
+                <ul class="o-list o-list--dash">
+                    <li>An email notification will be send to the owner(s)</li>
+                    <li>This can only be done three times per month - you have X left this month</li>
+                    <li>You still have to accommodate the people who already booked a table within the next 2 hours</li>
+                </ul> 
+            </article>
+
+
+            <button type="button" class="o-btn o-btn--twolines o-btn--bigred">
+                <div>
+                    <span>Limit new orders for 2 hours</span>
+                    <span>I understand I can't cancel already booked reservations</span>
+                </div>
+            </button>
+            
+            <i class="c-lightbox__close js-close"></i>
+        </div>
+    </div>
+
+<script type="text/javascript" src="commons.bundle.js"></script><script type="text/javascript" src="reservations.bundle.js"></script></body>
+</htm

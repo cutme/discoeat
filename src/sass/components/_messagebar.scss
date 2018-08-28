@@ -1,0 +1,42 @@
+.c-messagebar {
+    @extend %anim;
+    @include z-index(messagebar);
+    @extend %flex;
+    @extend %flex-x;
+    position: fixed;
+    left: 0; bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    transition-delay: 300ms;
+    transform: translate3d(0, 100%, 0);
+    
+    .pace-done & {
+        transform: translate3d(0, 0, 0);
+    }
+    
+    p {
+        margin-right: 20px;
+        font-size: rem(20);
+    }
+    
+    &__slide {
+        @extend %flex;
+        @extend %flex-y;
+    }
+
+    &--alert {
+        background-color: $c-red3;
+        
+        p {
+            color: white;
+        }
+        
+        .icon-help {
+            margin-left: 20px;
+            font-size: rem(24);
+            color: white;
+        }
+    }
+    
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<%= require('html-loader!./includes/head.html') %>
+
+    <div itemprop="mainContentOfPage" role="main" class="o-container">        
+
+        <div class="c-sidebar">
+        
+            <a href="#" class="c-sidebar__logo">
+                <img src=<%= require("./img/logo-discoeat--black.svg") %> alt="DiscoEat">
+            </a>
+        
+            <nav class="c-sidebar__nav">
+                <ul>
+                    <li>
+                        <a href="#"><i class="icon-dashboard"></i> Dashboard</a>
+                    </li>
+                    
+                    <li>
+                        <a href="reservations-upcoming.html"><i class="icon-calendar"></i> Reservations&nbsp;<i class="o-circle o-circle--red">3</i></a>
+                        
+                        <ul>
+                            <li>
+                                <a href="reservations-upcoming.html">Upcoming</a>
+                            </li>
+                            
+                            <li>
+                                <a href="reservations-past.html">Past</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="is-active">
+                        <a href="reservations-help.html"><i class="icon-help"></i> Help</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <%= require('html-loader!./includes/emergency.html') %>
+
+        </div>
+        
+        <div class="c-topbar">
+            <div class="o-hamburger js-hamburger"></div>
+        
+            <div class="c-breadcrumbs" id="breadcrumbs">
+                <span class="js-current">Help</span>
+            </div>
+            
+            <%= require('html-loader!./includes/logged.html') %>
+        </div>
+
+        <div class="c-reservations">
+        
+            <div class="c-help">
+                <h1 class="c-help__title">Help</h1>
+                
+                <p>Please use this form only in case you are facing operational issues.</p>
+                
+                <div class="c-help__form">
+                    <form action="#" class="js-validate" novalidate>
+                        <div class="form-row">
+                            <div class="form-group form-group--select">
+                                
+                                <div class="o-select">
+                                    <select class="o-select__dropdown">
+                                        <option value="0">A person walked in with a reservation but I don't have it in the system</option>
+                                    </select>
+                                    <span class="icon-arrow-down"></span>
+                                </div>
+                                
+                                <label>What do you need help with?</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group form-group--textarea">
+                                <textarea name="message" placeholder="The more details the better :)"></textarea>
+                                <label>Can you give us some details?</label>
+                            </div>
+                        </div>
+                        
+                                              
+                        <div class="form-row form-row--submit">
+                            <button type="submit" class="o-btn o-btn--twolines o-btn--bigred">
+                                <span>Send requrest</span>
+                                <span>We usually try to answer within x hours</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+
+        </div>
+        
+        <div class="c-messagebar c-messagebar--alert">
+            <p>You are losing potential customers for another 120 minutes! Turn emergency mode off asap!</p>
+            
+            <div class="c-messagebar__slide">
+                <div class="o-slidecheckbox o-slidecheckbox--small">
+                    <label class="toggle">
+                        <input type="checkbox">
+                        <div class="slide-toggle"></div>
+                    </label>
+                </div>
+
+                <a href="#" class="icon-help"></a>
+            </div>
+        </div>
+    </div>
+
+    <%= require('html-loader!./includes/change-num-of-people.html') %>
+</body>
+</htm
+
+bielewo

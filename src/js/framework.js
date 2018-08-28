@@ -1,28 +1,3 @@
-// Pace preloader
-
-Pace.start();
-
-Pace.on('done', function() {   
-
-	const element = document.getElementById("cover");
-
-    if (element) {
-
-		const container = document.getElementsByClassName('o-container')[0];
-		
-		const event = function(e) {
-            element.removeEventListener("transitionend", event);
-            document.body.removeAttribute('style');
-            document.getElementById('cover').remove();    
-        }
-
-        element.addEventListener("transitionend", event, false);
-        document.getElementsByClassName('pace')[0].remove();
-    }      
-});
-
-
-
 // Full height
 
 (function() {
@@ -71,23 +46,10 @@ Pace.on('done', function() {
             document.body.classList.toggle('no-overflow');
             top.classList.toggle('is-mobile');
             
+            document.addEventListener('keydown', pressEsc);
         }
         
-        hamburger.addEventListener('click', action);
-        
-        window.addEventListener('resize', function() {
-           
-           if (window.innerWidth >= 1024) {
-                if (hamburger.classList.contains('is-active')) {
-                    hamburger.classList.remove('is-active');
-                    document.body.classList.remove('no-overflow');
-                    top.classList.remove('is-mobile');
-                }
-           }
-            
-        });
-        
-        document.addEventListener('keydown', function(evt) {
+        const pressEsc = function(evt) {
             let isEscape = false;
             
             if ("key" in evt) {
@@ -101,8 +63,31 @@ Pace.on('done', function() {
                 top.classList.remove('is-mobile');
                 hamburger.classList.remove('is-active');
             }
+            
+            document.removeEventListener('keydown', pressEsc);
+        }
+        
+        hamburger.addEventListener('click', action);
+        
+        window.addEventListener('resize', function() {
+           
+           if (window.innerWidth >= 1024) {
+                if (hamburger.classList.contains('is-active')) {
+                    hamburger.classList.remove('is-active');
+                    document.body.classList.remove('no-overflow');
+                    top.classList.remove('is-mobile');
+                }
+           }
         });
     }
     
 }).call(this);
 
+
+window.thisindex = function(elm) {
+    let nodes = elm.parentNode.childNodes, node, i = 0, count = 0;
+    while( (node = nodes.item(i++)) && node != elm ) {
+        if( node.nodeType == 1 ) count++;            
+    }
+    return count;
+}

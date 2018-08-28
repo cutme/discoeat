@@ -1,9 +1,16 @@
 .o-container {
     @extend %anim;
+    height: 100%;
 //    overflow: hidden;
     
     &--subsite {
         padding-top: 100px;
+    }
+    
+    & > .c-breadcrumbs  {
+        a {
+            color: $c-red1;
+        }
     }
 }
 

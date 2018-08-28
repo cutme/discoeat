@@ -1,0 +1,17 @@
+.c-logged {
+    @extend %abs;
+    @extend %abs-y;
+    @extend %flex;
+    @extend %flex-y;
+    right: 40px;
+    
+    .icon-user {
+        margin-right: 10px;
+        font-size: rem(24);
+    }
+    
+    .icon-arrow-down {
+        margin-left: 10px;
+        font-size: rem(12);
+    }
+}

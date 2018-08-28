@@ -1,0 +1,17 @@
+.o-circle {
+    display: inline-flex;
+    @extend %flex-xy;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    margin-left: 3px;
+    font-size: rem(15);
+    
+    &--red {
+        background-color: $c-red1;
+        color: white;
+    }
+    
+    &--blackoutline {
+        border: 1px solid $c-black2;
+    }
+}

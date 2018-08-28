@@ -1,0 +1,91 @@
+.c-reservations {
+    @include z-index(scrollarea);
+    @extend %antialias;
+    min-height: 100%;
+    background-color: $c-gray1;
+    padding: 90px 30px 90px 300px;
+    font-weight: $regular;
+    
+    .o-tabs {
+        &__nav {
+            margin-bottom: 60px;
+    
+            li {
+                box-shadow: inset 0px -1px 0px 0px $c-black3;
+                padding: 12px 40px;
+                font-size: rem(20);
+                
+                &.is-active {
+                    box-shadow: inset 0px -5px 0px 0px $c-red1;
+                    font-weight: $bold;
+                }
+                
+                &:hover {
+                    color: $c-red1;
+                }
+            }
+        }
+    }
+    
+    .o-table {
+        margin-bottom: 45px;
+        border-collapse: separate;
+        border-spacing: 0 6px;
+        
+        tbody {
+            td {
+                background-color: white;
+                padding: 20px 0;
+                
+                > div {
+                    padding: 2px grid(30, $base2);
+                    text-align: center;
+                    white-space: nowrap;
+                    
+                    @media screen and ( min-width: $base2 + 1px ) {
+                        padding: 0 30px;
+                    }
+                    
+                    @media screen and ( max-width: $base2 + px ) {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 200px;
+                    }
+                    
+                }
+
+                &:not(:first-child) {
+                    > div {
+                        border-left: 1px solid $c-gray3;
+                    }
+                }
+            }
+
+            tr {
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5);
+
+                &.yellow {
+                    td {
+                        background-color: rgba(255,230,102,0.1);
+                    }
+                }
+            }            
+        }
+        
+        thead {
+            th {
+                padding: 15px 30px;
+                text-align: left;
+                font-weight: $bold;
+                
+                
+                @media screen and ( max-width: $base2 + px ) {
+                    padding: 15px 5px;
+                }
+                
+            }
+        }
+    }
+    
+    
+}

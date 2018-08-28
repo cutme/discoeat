@@ -1,0 +1,48 @@
+.c-signin {
+    @extend %antialias;
+    width: 100%;
+    //width: 436px;
+    margin: 0 auto;
+    
+
+    
+    .form-group {
+        border-bottom: 1px solid $c-gray3;
+    }
+    
+    .form-row {
+    
+        &--forgot {
+            text-align: center;
+            font: {
+                size: rem(20);
+            }
+            
+            a {
+                border-bottom: 1px solid $c-gray3;
+                font-weight: $regular;
+            }
+        }
+
+        &--submit {
+            padding: {
+                top: 20px; 
+                bottom: 20px;
+            }
+        }
+    }
+    
+    .o-btn {
+        width: 100%;
+        
+        span {
+            font: {
+                size: rem(20);
+                weight: $bold;
+            }
+        }
+    }
+    
+    
+    
+}

@@ -1,0 +1,38 @@
+.o-overlay {    
+    @extend %flex;
+    @extend %flex-xy;
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    visibility: hidden;
+    opacity: 0;
+    
+   // z-index: -1;
+    
+    .c-lightbox {
+        @extend %anim;
+        transform: translate3d(0, 20px, 0);
+        opacity: 0;
+    }
+    
+    &.is-visible {
+        @extend %anim;
+        @include z-index(overlay);
+        transition-duration: 150ms;
+        
+        
+        .pace-done & {
+            visibility: visible;
+            opacity: 1;
+            
+            .c-lightbox {
+                transition-delay: 150ms;
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+        
+        
+    }
+}

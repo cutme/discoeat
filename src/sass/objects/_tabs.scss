@@ -1,0 +1,29 @@
+.o-tabs {
+    &__content {
+        opacity: 0;
+        
+        &.is-active {
+            @extend %anim;
+            transition-duration: 150ms;
+            opacity: 1;
+        }
+
+        
+        > li {
+            display: none;
+            
+            &.is-active {
+                display: block;
+            }
+        }
+    }
+
+    &__nav {
+        display: inline-flex;
+    
+        li {
+            @extend %flex;
+            cursor: pointer;
+        }
+    }
+}

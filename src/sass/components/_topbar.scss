@@ -1,0 +1,47 @@
+.c-topbar {
+    @include z-index(topbar);
+    @extend %antialias;
+    @extend %flex;
+    @extend %flex-y;
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%;
+    height: 75px;
+    background-color: white;
+    padding-left: 278px;
+    font-weight: $regular;
+    
+    .c-breadcrumbs {
+        margin: 0 0 0 35px;
+        
+        a {
+            @extend %anim;
+            transition-duration: 150ms;
+            color: $c-black2;
+            
+            &:hover {
+                color: $c-red1;
+            }
+        }
+        
+        span {
+            font-weight: $bold;
+        }
+    }
+    
+    .o-hamburger {
+        display: block;
+        position: relative;
+        right: auto; top: auto;
+        
+        @media screen and ( min-width: $tablet + 1px ) {
+            display: block;
+        }
+        
+        a {
+            &:hover {
+                color: $c-red1;
+            }
+        }
+    }
+}

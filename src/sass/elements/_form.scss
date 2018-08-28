@@ -135,3 +135,61 @@ input[type=checkbox] {
         }
     }
 }
+
+
+.form-row {
+    margin-bottom: 16px;
+    
+    &.has-error {
+        label {
+            span {
+                color: $c-red1;
+            }
+        }
+    }
+}
+
+.form-group {
+    @extend %rel;
+    background-color: white;
+    height: 75px;
+    
+    label, input, textarea {
+        @extend %abs;
+        left: 15px;
+        width: calc(100% - 30px);
+    }
+    
+    label {
+        top: 10px;
+        text-transform: uppercase;
+        font: {
+            size: rem(12);
+            weight: normal;
+        }
+    }
+    
+    input, textarea {
+        font-weight: $medium;
+        font-size: rem(20);
+    }
+    
+    input {
+        bottom: 14px;
+        height: 24px;
+        
+    }
+    
+    textarea {
+        bottom: 14px;
+        height: calc(100% - 60px);
+    }
+    
+    &--textarea {
+        height: 170px;
+    }
+    
+    &.has-error {
+        border: 2px solid $c-red1;
+    }
+}

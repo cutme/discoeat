@@ -1,0 +1,16 @@
+.c-emergency {
+    &__title {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: rem(20);
+
+        span {
+            font-weight: $bold;
+        }
+        
+        .icon-help {
+            margin-left: 5px;
+            font-size: rem(20);
+        }
+    }
+}

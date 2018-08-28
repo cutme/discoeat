@@ -2,12 +2,28 @@
     margin-bottom: 60px;
 
     a {
-        @extend %ulink;
-        color: $c-red1;
+        //@extend %ulink;
+        //color: $c-red1;
         
         &:after, &:before {
-            bottom: -1px;
-            background-color: $c-red1;
+           // bottom: -1px;
+         //   background-color: $c-red1;
+        }
+    }
+    
+    a {
+        @extend %rel;
+
+        &:not(:first-of-type) {
+            margin-left: 20px;
+            
+            &:before {
+                @extend %abs;
+                @extend %abs-after;
+                left: -15px; top: 0;
+                font-weight: $medium;
+                content: '>';
+            }
         }
     }
     

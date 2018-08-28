@@ -1,0 +1,44 @@
+.c-help {
+    padding-top: 20px;
+    padding-bottom: 80px;
+    
+    &__form {
+        max-width: 790px;
+        padding-top: 40px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        font: {
+            size: rem(50);
+            weight: $bold;
+        }
+    }
+    
+    .form-group {
+        &--select {
+            padding-top: 40px;
+        }
+        
+        &--textarea {
+            height: 270px;
+            border-bottom: 1px solid $c-gray3;
+        }
+    }
+    
+    .o-btn {
+        width: 380px;
+    }
+    
+    .form-row {
+        &--submit {
+            padding-top: 20px;
+        }
+    }
+    
+    .o-select {
+        &__dropdown {
+            font-weight: $bold;
+        }
+    }
+}

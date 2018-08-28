@@ -1,0 +1,22 @@
+.o-select {
+    @extend %rel;
+    
+    .icon-arrow-down {
+        @extend %abs;
+        top: 5px;
+        right: 10px;
+        font-size: rem(18);
+    }
+
+    &__dropdown {    
+        appearance: none;
+        width: 100%;
+        background-color: white;
+        padding: 0 15px 15px 15px;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $c-gray3;
+        font-size: rem(20);
+        cursor: pointer;
+    }
+}
