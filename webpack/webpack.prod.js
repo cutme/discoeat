@@ -1,92 +1,64 @@
 const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HappyPack = require('happypack');
-const HtmlWebpackInlineAssetsPlugin = require('html-webpack-inline-assets-plugin');
+const loaders = require('./loaders');
+const plugins = require('./plugins');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
- 
+const HappyPack = require('happypack');
+const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const sourceMap = true;
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+
 const minify = {
-    collapseWhitespace: true,
+   /*
+ collapseWhitespace: true,
     removeComments: true,
     minifyJS: true,
     minifyURLs: true,
     removeEmptyAttributes: true,
     removeScriptTypeAttributes: true,
+*/
 }
 
+console.log(process.env.NODE_ENV);
+
 module.exports = {
-   entry: {
+    mode: 'production',
+    devtool: 'source-map',
+
+    entry: {
         text: "./src/text.js",
         index: "./src/index.js",
         signup: "./src/signup.js",
         reservations: "./src/reservations.js"
     },
+    
     output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: "[name].bundle.js",
+        path: path.resolve(__dirname, '../dist'),
+        filename: "js/[name].bundle.js",
         publicPath: ''
     },
-    resolve: {
-        extensions: ['.js']
-    },
+
     module: {
     	rules: [
-    	    {
-				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: 'happypack/loader?id=js'
-			},
-			
-            {
-                test: /\.(jpg|png|svg)$/i,
-                exclude: /fonts/,
-                use: [
-                    //'file-loader?name=[name].[ext]&outputPath=img/&useRelativePath=true',
-                    'file-loader?name=[name].[ext]&useRelativePath=true',
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                enabled: false,
-                                progressive: false,
-                                quality: 70
-                            }
-                        }
-                    }
-                ]  
-            },
-            
-            { 
-                test: /\.(woff|woff2|eot|ttf|svg)$/, 
-                exclude: /img/,
-                use: [
-                    {
-                        loader: 'url-loader?limit=100000',
-                        options: {
-        				    name: 'fonts/[name].[ext]'
-        				}
-                    }
-                ]
-                
-            }
-		]
-    },
-    
-    devServer: {
-        compress: true,
-        hot: true,
-        open: true,
-        inline: true
+			loaders.css,
+            loaders.fonts,
+            loaders.images,
+            loaders.js,
+        ]
     },
 
     plugins: [
-
-        new HappyPack({
-          id: 'js',
-          threads: 4,
-          loaders: ['babel-loader?presets[]=env']
+        new ProgressBarPlugin(),
+        
+        new MiniCssExtractPlugin({
+            filename: "[name].css"
         }),
-		
+
+        createHappyPlugin('scss', ['css-loader?importLoaders:1!group-css-media-queries-loader?options:sourceMap!postcss-loader!sass-loader']),
+        
+        plugins.js,
+        
 		new HtmlWebpackPlugin({
 		    filename: 'index.html',
 		    cache: false,
@@ -149,10 +121,27 @@ module.exports = {
     		chunks: ['commons', 'text'],
             template: './src/text.html',
             minify: false
-		}),
-		
-		new webpack.optimize.CommonsChunkPlugin({
-            name: 'commons',        
-        })
-	]
+		})
+	],
+	
+	optimization: {
+        namedModules: true, // NamedModulesPlugin()
+        splitChunks: { // CommonsChunkPlugin()
+            name: 'commons',
+            minChunks: 2
+        },
+        noEmitOnErrors: true, // NoEmitOnErrorsPlugin
+        concatenateModules: true //ModuleConcatenationPlugin
+    }
 };
+
+
+function createHappyPlugin(id, loaders) {
+    return new HappyPack({
+        id: id,
+        loaders: loaders,
+        threadPool: happyThreadPool,
+        verbose: false,
+    });
+}
+

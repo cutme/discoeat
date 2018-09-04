@@ -37,19 +37,30 @@
                 background-color: white;
                 padding: 20px 0;
                 
+                &:first-child,
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(6) {
+                    > div {
+                        text-align: center;
+                        white-space: nowrap;
+                    }
+                }
+                
                 > div {
-                    padding: 2px grid(30, $base2);
-                    text-align: center;
-                    white-space: nowrap;
+                    padding: 2px 30px;
+//                    text-align: center;
+                  //  white-space: nowrap;
                     
-                    @media screen and ( min-width: $base2 + 1px ) {
-                        padding: 0 30px;
+                    @media screen and ( max-width: $base + px ) {
+                        padding: 0 5px;
+                        font-size: rem(13);
                     }
                     
                     @media screen and ( max-width: $base2 + px ) {
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        max-width: 200px;
+//                        overflow: hidden;
+  //                      text-overflow: ellipsis;
+    //                    max-width: 200px;
                     }
                     
                 }

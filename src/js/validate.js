@@ -1,10 +1,11 @@
-const validate = require("validate.js");
-import {scrollTo} from './goto';
+//import {scrollTo} from './goto';
 
 
 // Validate
 
 (function() {
+
+    const validate = require("validate.js");
 
 	// These are the constraints used to validate the form
 	var constraints = {
@@ -51,7 +52,7 @@ import {scrollTo} from './goto';
 				let window_pos = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 				let target = window_pos + form.getBoundingClientRect().top;
 
-				scrollTo(target, .5, -50);
+				scrollToo(target, .5, -50);
 			}
 		}
 		
@@ -134,4 +135,5 @@ var arr = formGroup.querySelectorAll(".help-block.error");
 			//sendData();
 		}
 	}
-}).call(this);
+})();
+

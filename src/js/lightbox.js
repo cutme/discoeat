@@ -1,7 +1,7 @@
 (function() {
     
-    const el = document.getElementsByClassName('js-lightbox');
-    
+    let el;
+
     const init = function() {
     
         const overlay = document.getElementsByClassName('js-overlay');
@@ -71,8 +71,11 @@
                    
     };
         
-    if (el.length>0) {
-        init();
-    }
+    document.addEventListener('DOMContentLoaded',function() {
+        
+        el = document.getElementsByClassName('js-lightbox');
+        el ? init() : false;
+        
+    }, false);
     
-}).call(this);
+})();

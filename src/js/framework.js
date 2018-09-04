@@ -16,7 +16,7 @@
     	window.addEventListener( 'resize', action );
     }
 
-}).call(this);
+})();
 
 
 // isMobile
@@ -27,7 +27,7 @@
 	} else {
 	    document.getElementsByTagName('html')[0].className += ' desktop';
 	}
-}).call(this);
+})();
 
 
 // Nav
@@ -81,7 +81,7 @@
         });
     }
     
-}).call(this);
+})();
 
 
 window.thisindex = function(elm) {
@@ -91,3 +91,14 @@ window.thisindex = function(elm) {
     }
     return count;
 }
+
+window.scrollToo = function (target, speed, offset) {
+    
+	TweenLite.to(window, speed, {
+		scrollTo: {
+			y: target + offset,
+			autoKill: false
+		},
+		ease: Power1.easeOut
+	});
+};

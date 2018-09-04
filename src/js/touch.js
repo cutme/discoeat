@@ -2,10 +2,9 @@
 
 (function() {
     
-    const el = document.getElementById('touch');
+    let el;
 
-    if (el) {
-    
+    const init = function() {
             
         const body = document.body,
               html = document.documentElement;
@@ -35,8 +34,13 @@
         
         window.addEventListener('scroll', action);
 
-        
-
     } 
     
-}).call(this);
+    document.addEventListener('DOMContentLoaded',function() {
+        
+        el = document.getElementById('touch');
+        el ? init() : false;
+        
+    }, false);
+
+})();

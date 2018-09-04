@@ -1,7 +1,6 @@
 (function() {
 
-    const el = document.getElementById('tabs');
-
+    let el;
     const init = function() {
         const content = el.getElementsByClassName('js-content')[0],
               contentItem = content.getElementsByClassName('js-tab'),
@@ -49,10 +48,12 @@
             });
         }
     }
-
-    if (el) {
-        init();
-    }
     
-
-}).call(this);
+    document.addEventListener('DOMContentLoaded',function() {
+        
+        el = document.getElementById('tabs');
+        el ? init() : false;
+        
+    }, false);
+    
+})();

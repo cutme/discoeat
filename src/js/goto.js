@@ -1,19 +1,18 @@
-// Scroll To
+/*
 
-const scrollTo = function (target, speed, offset) {
 
-	TweenLite.to(window, speed, {
-		scrollTo: {
-			y: target + offset,
-			autoKill: false
-		},
-		ease: Power1.easeOut
-	});
-};
+(function() { 
+    
+    
+    
+})();
 
 export {scrollTo};
+*/
+
 
 // GoToTarget
+
 
 (function() {
 
@@ -47,7 +46,7 @@ export {scrollTo};
             document.body.removeAttribute('style');
 	    
 	        let target = window_pos + obj.getBoundingClientRect().top - offset;
-	        scrollTo(target, speed_calculate(target), offset);
+	        scrollToo(target, speed_calculate(target), offset);
 	    }
         
         if (window.e) {
@@ -56,18 +55,18 @@ export {scrollTo};
         
 	    e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
 	};
+	
 
-	const btn = document.getElementsByClassName('js-goto');
-
-
-    if (btn.length>0) {
-    	for (let i = 0; i < btn.length; i++) {
-            btn[i].addEventListener('click', clickAction);
-        }
-    }
+    document.addEventListener('DOMContentLoaded',function() {
     
-//    if (target) {
-        //alert(target);
-  //  }
+        const btn = document.getElementsByClassName('js-goto');
+        
+        if (btn.length>0) {
+        	for (let i = 0; i < btn.length; i++) {
+                btn[i].addEventListener('click', clickAction);
+            }
+        }
+        
+    }, false);
 
-}).call(this);
+})();
