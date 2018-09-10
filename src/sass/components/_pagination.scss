@@ -1,30 +1,56 @@
 .c-pagination {
     @extend %flex;
     @extend %rel;
+    
+    @media screen and ( max-width: $smartphone + px ) {
+        flex-wrap: wrap;
+    }
 
     &__arrow {
-        @extend %abs;
-        @extend %abs-y;
         @extend %anim;
+        @extend %abs-y;
         transition-duration: 150ms;
+        
+        @media screen and ( min-width: $smartphone + 1px ) {
+            position: absolute;
+        }
+        
+        @media screen and ( max-width: $smartphone + px ) {
+            width: 50%;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+
+        span {        
+            @media screen and ( max-width: $smartphone + px ) {
+                display: none;
+            }
+        }
+        
         
         &:before {
             @extend %abs;
             @extend %abs-y;
-            
             font-family: $icons;
             font-weight: $bold;
             content: "\e902";
         }
 
         &--prev {
-            left: 0;
-            padding-left: 40px;
             
+            @media screen and ( min-width: $smartphone + 1px ) {
+                left: 0;
+                padding-left: 40px;
+            }
+                        
             &:before {
                 left: 0;
                 transform-origin: right;
                 transform: rotate(90deg);
+                
+                @media screen and ( max-width: $smartphone + px ) {
+                    left: 50%;
+                }
             }
             
             &:hover {
@@ -33,13 +59,20 @@
         }
         
         &--next {
-            right: 0;
-            padding-right: 40px;
+            
+            @media screen and ( min-width: $smartphone + 1px ) {
+                right: 0;
+                padding-right: 40px;
+            }
             
             &:before {
                 right: 0;
                 transform-origin: left;
                 transform: rotate(270deg);
+                
+                @media screen and ( max-width: $smartphone + px ) {
+                    right: 50%;
+                }
             }
             
             &:hover {
@@ -84,9 +117,5 @@
             	color: white;
         	}
         }
-    }
-
-    &__page {
-
     }
 }

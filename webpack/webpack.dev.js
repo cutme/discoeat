@@ -6,14 +6,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const minify = {
-   /*
- collapseWhitespace: true,
+    collapseWhitespace: true,
     removeComments: true,
     minifyJS: true,
     minifyURLs: true,
     removeEmptyAttributes: true,
     removeScriptTypeAttributes: true,
-*/
 }
 
 module.exports = {

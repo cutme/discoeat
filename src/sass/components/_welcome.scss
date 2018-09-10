@@ -2,6 +2,10 @@
     @extend %antialias;
     @extend %flex;
     
+    @media screen and ( max-width: $tablet_portrait + px ) {
+        overflow: hidden;
+    }
+    
     &__header {
         text-align: center;
         margin-bottom: 40px;
@@ -29,6 +33,13 @@
             padding: 0 grid(77, $base2);
         }
         
+        @media screen and ( max-width: $tablet + px ) {
+            width: 50%;
+        }
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            width: 100%;
+        }
     }
     
     &__right {
@@ -39,5 +50,13 @@
             repeat: no-repeat;
             size: cover;
         }
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            position: absolute;
+            width: 100%; height: 100%;
+            opacity: 0.05;
+            filter: blur(10px);
+        }
+
     }
 }

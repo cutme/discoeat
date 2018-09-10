@@ -37,8 +37,8 @@
         "webpack-dev-server": "^3.1.7"
     },
     "scripts": {
-        "dev": "webpack-dev-server --config webpack/webpack.dev.js",
-        "prod": "npm run clean && webpack -p --mode production --config webpack/webpack.prod.js",
+        "dev": "NODE_ENV=developer webpack-dev-server --config webpack/webpack.dev.js",
+        "prod": "npm run clean && NODE_ENV=production webpack -p --config webpack/webpack.prod.js",
         "clean": "rimraf ./dist/*"
     },
     "name": "discoeat",

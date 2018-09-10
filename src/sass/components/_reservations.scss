@@ -1,19 +1,61 @@
 .c-reservations {
-    @include z-index(scrollarea);
+    @include z-index(reservations);
     @extend %antialias;
+    @extend %anim;
     min-height: 100%;
     background-color: $c-gray1;
     padding: 90px 30px 90px 300px;
     font-weight: $regular;
     
+    &:after {
+        @extend %abs;
+        @extend %abs-after;
+        @extend %anim;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(black, .8);
+        z-index: -1;
+        visibility: hidden;
+        opacity: 0;
+        
+        .mobile-menu & {
+            z-index: 10;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    
+    @media screen and ( max-width: $tablet + px ) {
+        padding-left: 30px;
+    }
+    
+    @media screen and ( max-width: $tablet_portrait + px ) {
+        padding: {
+            left: 15px;
+            right: 15px;
+        }
+    }
+    
+    .mobile-menu & {
+
+    }
+    
     .o-tabs {
         &__nav {
             margin-bottom: 60px;
+            
+            @media screen and ( max-width: $smartphone + px ) {
+                margin-bottom: 30px;
+            }
     
             li {
                 box-shadow: inset 0px -1px 0px 0px $c-black3;
                 padding: 12px 40px;
                 font-size: rem(20);
+                
+                @media screen and ( max-width: $tablet + px ) {
+                    font-size: rem(16);
+                }
                 
                 &.is-active {
                     box-shadow: inset 0px -5px 0px 0px $c-red1;
@@ -22,6 +64,11 @@
                 
                 &:hover {
                     color: $c-red1;
+                }
+                
+                @media screen and ( max-width: $smartphone + px ) {
+                    padding: 12px 0;
+                    font-size: rem(14);
                 }
             }
         }
@@ -32,42 +79,101 @@
         border-collapse: separate;
         border-spacing: 0 6px;
         
+        
+        
+        tr {
+            @media screen and ( max-width: $tablet_portrait + px ) {
+                display: block;
+                margin-bottom: 15px;
+            }
+            
+            @media screen and ( max-width: $tablet_portrait + px ) {
+                [data-label] {
+                    display: none;
+                }
+                
+                [data-label="Name"] {
+                    display: flex;
+                }
+                
+                &.is-visible {
+                    [data-label] {
+                        display: flex;
+                    }
+                }
+            }
+        }
+        
+        td {
+            &:before {
+                @media screen and ( max-width: $tablet_portrait + px ) {
+                    content: attr(data-label);
+                    float: left;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        
+        
+        
         tbody {
             td {
+                position: relative;
                 background-color: white;
                 padding: 20px 0;
+                text-align: center;
+                vertical-align: middle;
+                
+                @media screen and ( max-width: $tablet + px ) {
+                    padding: 15px 0;
+                }
+                
+                @media screen and ( max-width: $tablet_portrait + px ) {
+                    display: flex;
+                    padding: 5px 10px;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: right;
+                    border-bottom: 1px solid rgba($c-gray3, .3);
+                }
                 
                 &:first-child,
                 &:nth-child(2),
                 &:nth-child(3),
                 &:nth-child(6) {
-                    > div {
-                        text-align: center;
-                        white-space: nowrap;
-                    }
+                    //> div {
+                        @media screen and ( min-width: $tablet_portrait + 1px ) {
+                            text-align: center;
+                            white-space: nowrap;
+                        }
+                    //}
                 }
                 
-                > div {
-                    padding: 2px 30px;
-//                    text-align: center;
-                  //  white-space: nowrap;
+                //> div {
+                    //padding: 2px 20px;
                     
                     @media screen and ( max-width: $base + px ) {
-                        padding: 0 5px;
-                        font-size: rem(13);
+                        //padding: 0 20px;
+                        font-size: rem(12);
                     }
-                    
-                    @media screen and ( max-width: $base2 + px ) {
-//                        overflow: hidden;
-  //                      text-overflow: ellipsis;
-    //                    max-width: 200px;
-                    }
-                    
-                }
+                //}
 
                 &:not(:first-child) {
+                    &:after {
+                        @extend %abs;
+                        @extend %abs-after;
+                        top: 25px; bottom: 25px;
+                        width: 1px; height: calc(100% - 50px);
+                        background-color: $c-gray3;
+                        
+                        @media screen and ( max-width: $tablet_portrait + px ) {
+                            display: none;
+                        }
+                    }
+
                     > div {
-                        border-left: 1px solid $c-gray3;
+                       // border-left: 1px solid $c-gray3;
                     }
                 }
             }
@@ -84,6 +190,16 @@
         }
         
         thead {
+            @media screen and ( max-width: $tablet_portrait + px ) {
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+    
             th {
                 padding: 15px 30px;
                 text-align: left;
@@ -95,6 +211,10 @@
                 }
                 
             }
+        }
+        
+        .o-rectangleoval {
+            margin: 5px 0;
         }
     }
     

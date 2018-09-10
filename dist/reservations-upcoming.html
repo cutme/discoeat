@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-<head> <meta http-equiv=X-UA-Compatible content="IE=Edge"> <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"> <meta charset=UTF-8> <meta name=robots content="noindex, nofollow"> <meta name=theme-color content=#fff> <title>DiscoEat</title> <link href="reservations.css" rel="stylesheet"></head> <body style=overflow:hidden itemscope=itemscope itemtype=https://schema.org/WebPage> <div class=c-cover style=position:fixed;left:0;top:0;width:100%;height:100%;z-index:120;background-color:#fff id=cover></div> <script type="text/javascript" src="js/reservations.bundle.js"></script></body>
+<head> <meta http-equiv=X-UA-Compatible content="IE=Edge"> <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"> <meta charset=UTF-8> <meta name=robots content="noindex, nofollow"> <meta name=theme-color content=#fff> <title>DiscoEat</title> <link href="reservations.css" rel="stylesheet"></head> <body style=overflow:hidden itemscope=itemscope itemtype=https://schema.org/WebPage> <div class=c-cover style=position:fixed;left:0;top:0;width:100%;height:100%;z-index:120;background-color:#fff id=cover></div> <script type="text/javascript" src="js/vendors.bundle.js"></script><script type="text/javascript" src="js/reservations.bundle.js"></script></body>
 
     <div itemprop="mainContentOfPage" role="main" class="o-container">        
 
@@ -36,12 +36,12 @@
                 </ul>
             </nav>
             
-             <div class=c-emergency> <h4 class=c-emergency__title> <span>Emergency Mode</span> <a href=# class=icon-help></a> </h4> <div class=o-slidecheckbox> <label class=toggle> <input type=checkbox> <div class=slide-toggle></div> </label> </div> </div> 
+             <div class=c-emergency> <h4 class=c-emergency__title> <span>Emergency Mode</span> <span class=icon-help data-message="Tooltip content..."></span> </h4> <div class=o-slidecheckbox> <label class=toggle> <input type=checkbox> <div class=slide-toggle></div> </label> </div> </div> 
 
         </div>
         
-        <div class="c-topbar">
-            <div class="o-hamburger js-hamburger"></div>
+        <div class="c-topbar js-top">
+            <div class="o-hamburger js-reservations js-hamburger"></div>
         
             <div class="c-breadcrumbs" id="breadcrumbs">
                 <a href="#">Reservations</a>
@@ -49,10 +49,10 @@
                 <span class="js-current">Today</span>
             </div>
             
-             <div class=c-logged> <i class=icon-user></i> <p class=c-logged__name>Kreuzburger Friedrichshain</p> <i class=icon-arrow-down></i> </div> 
+             <div class=c-logged> <i class=icon-user></i> <p class=c-logged__name>Kreuzburger Friedrichshain</p> <i class=icon-arrow-down></i> <a href=# class="c-logout icon-log-out"></a> </div> 
         </div>
 
-        <div class="c-reservations">
+        <div class="c-reservations" id="reservations">
         
             <div class="o-tabs" id="tabs">
                 <ul class="o-tabs__nav js-nav">
@@ -66,58 +66,65 @@
                         <table class="o-table">
                             <thead>
                                 <tr>
-                                    <th>Day</th>
-                                    <th>Time</th>
-                                    <th>#People</th>
-                                    <th>Name</th>
-                                    <th>Contact</th>
-                                    <th>Discount</th>
-                                    <th>Status</th>
+                                    <th scope="col">Day</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">#People</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Contact</th>
+                                    <th scope="col">Discount</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                             </thead>
                             
                             <tbody>
                                 <tr class="yellow">
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
                                 </tr>
                                 
                                 <tr class="yellow">
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -129,132 +136,72 @@
                         <table class="o-table">
                             <thead>
                                 <tr>
-                                    <th>Day</th>
-                                    <th>Time</th>
-                                    <th>#People</th>
-                                    <th>Name</th>
-                                    <th>Contact</th>
-                                    <th>Discount</th>
-                                    <th>Status</th>
+                                    <th scope="col">Day</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">#People</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Contact</th>
+                                    <th scope="col">Discount</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                             </thead>
                             
                             <tbody>
                                 <tr class="yellow">
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
                                 </tr>
                                 
                                 <tr class="yellow">
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
-                                </tr>
-
-                                <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
-                                </tr>
-                                
-                                <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
-                                </tr>
-                                
-                                <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
-                                </tr>
-                                
-                                <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
-                                </tr>
-                                
-                                <tr>
-                                    <td><div>27-04-18</div></td>
-                                    <td><div>13:00</div></td>
-                                    <td><div>4</div></td>
-                                    <td><div>John Doe long name</div></td>
-                                    <td><div>+49 xxx xxx 888</div></td>
-                                    <td><div>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help"></i></span></div></td>
-
-                                    <td><div><div class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></div></div></td>
+                                    <td data-label="Day">27-04-18</td>
+                                    <td data-label="Time">13:00</td>
+                                    <td data-label="#People">4</td>
+                                    <td data-label="Name" class="js-expand">John Doe long name</td>
+                                    <td data-label="Contact">+49 xxx xxx 888</td>
+                                    <td data-label="Discount"><span>40% <span class="o-rectangleoval o-rectangleoval--promo">-5&euro; <i class="icon-help" data-message="Tooltip content..."></i></span></span></td>
+                                    <td data-label="Status"><span><span class="o-rectangleoval o-rectangleoval--status upcoming js-lightbox" data-id="changeNumOfPeople">Upcoming <i class="icon-pencil"></i></span></span></td>
                                 </tr>
                             </tbody>
                         </table>
                         
                         <div class="c-pagination">
-                            <a href="#" class="c-pagination__arrow c-pagination__arrow--prev">Previous</a>
-                            <a href="#" class="c-pagination__arrow c-pagination__arrow--next">Next</a>
+                            <a href="#" class="c-pagination__arrow c-pagination__arrow--prev"><span>Previous</span></a>
+                            <a href="#" class="c-pagination__arrow c-pagination__arrow--next"><span>Next</span></a>
                             
                             <ul>
                                 <li class="is-active">

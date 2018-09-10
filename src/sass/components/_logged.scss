@@ -1,13 +1,34 @@
 .c-logged {
     @extend %abs;
     @extend %abs-y;
+    @extend %anim;
     @extend %flex;
     @extend %flex-y;
-    right: 40px;
+    right: 30px;
+    opacity: 1;
+    
+    @media screen and ( max-width: $tablet_portrait + px ) {
+        right: 20px;
+    }
+    
+    &__name {
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            display: none;
+        }
+    }
+    
+    .mobile-menu & {
+        opacity: 0;
+        white-space: nowrap;
+    }
     
     .icon-user {
         margin-right: 10px;
         font-size: rem(24);
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            margin-right: 0;
+        }
     }
     
     .icon-arrow-down {

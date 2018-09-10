@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded',function() {
+
 // Full height
 
 (function() {
@@ -34,19 +36,43 @@
 
 (function() {
     
-    const hamburger = document.getElementsByClassName('js-hamburger')[0];
+    const hamburger = document.getElementsByClassName('js-hamburger')[0],
+          body = document.body;
     
     if (hamburger) {
      
         const top = document.getElementsByClassName('js-top')[0];
-     
+        
+        const closeNav = function() {
+            body.classList.remove('no-overflow');
+            body.classList.remove('mobile-menu');  
+            hamburger.classList.remove('is-active');
+            top.classList.remove('is-mobile');
+            document.removeEventListener('click', clickOutside);
+        };
+        
+        const clickOutside = function(e) {
+            let target = e.target;  
+
+            if (target.classList.contains('c-reservations')) {
+                closeNav();
+            } 
+        }
+
         const action = function(e) {
             
             e.currentTarget.classList.toggle('is-active');
-            document.body.classList.toggle('no-overflow');
+            body.classList.toggle('no-overflow');
             top.classList.toggle('is-mobile');
             
             document.addEventListener('keydown', pressEsc);
+            
+            // Reservations page
+            
+            if (e.currentTarget.classList.contains('js-reservations')) {
+                body.classList.toggle('mobile-menu');                
+                document.addEventListener('click', clickOutside);
+            }
         }
         
         const pressEsc = function(evt) {
@@ -59,9 +85,7 @@
             }
             
             if (isEscape) {
-                document.body.classList.remove('no-overflow');
-                top.classList.remove('is-mobile');
-                hamburger.classList.remove('is-active');
+                closeNav();
             }
             
             document.removeEventListener('keydown', pressEsc);
@@ -74,7 +98,8 @@
            if (window.innerWidth >= 1024) {
                 if (hamburger.classList.contains('is-active')) {
                     hamburger.classList.remove('is-active');
-                    document.body.classList.remove('no-overflow');
+                    body.classList.remove('no-overflow');
+                    body.classList.remove('mobile-menu');
                     top.classList.remove('is-mobile');
                 }
            }
@@ -102,3 +127,6 @@ window.scrollToo = function (target, speed, offset) {
 		ease: Power1.easeOut
 	});
 };
+
+
+}, false);

@@ -8,16 +8,13 @@ const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const sourceMap = true;
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-
 const minify = {
-   /*
- collapseWhitespace: true,
+    collapseWhitespace: true,
     removeComments: true,
     minifyJS: true,
     minifyURLs: true,
     removeEmptyAttributes: true,
     removeScriptTypeAttributes: true,
-*/
 }
 
 console.log(process.env.NODE_ENV);
@@ -55,14 +52,14 @@ module.exports = {
             filename: "[name].css"
         }),
 
-        createHappyPlugin('scss', ['css-loader?importLoaders:1!group-css-media-queries-loader?options:sourceMap!postcss-loader!sass-loader']),
+        createHappyPlugin('scss', ['css-loader?importLoaders:1!postcss-loader!sass-loader']),
         
         plugins.js,
         
 		new HtmlWebpackPlugin({
 		    filename: 'index.html',
 		    cache: false,
-    		chunks: ['commons', 'index'],
+    		chunks: ['vendors', 'index'],
             template: './src/index.html',
             minify: false
 		}),
@@ -70,7 +67,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 		    filename: 'reservations-help.html',
 		    cache: false,
-    		chunks: ['commons', 'reservations'],
+    		chunks: ['vendors', 'reservations'],
             template: './src/reservations-help.html',
             minify: false
 		}),
@@ -78,7 +75,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 		    filename: 'reservations-limit.html',
 		    cache: false,
-    		chunks: ['commons', 'reservations'],
+    		chunks: ['vendors', 'reservations'],
             template: './src/reservations-limit.html',
             minify: false
 		}),
@@ -86,7 +83,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 		    filename: 'reservations-login.html',
 		    cache: false,
-    		chunks: ['commons', 'reservations'],
+    		chunks: ['vendors', 'reservations'],
             template: './src/reservations-login.html',
             minify: false
 		}),
@@ -94,7 +91,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 		    filename: 'reservations-upcoming.html',
 		    cache: false,
-    		chunks: ['commons', 'reservations'],
+    		chunks: ['vendors', 'reservations'],
             template: './src/reservations-upcoming.html',
             minify: false
 		}),
@@ -102,7 +99,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 		    filename: 'reservations-past.html',
 		    cache: false,
-    		chunks: ['commons', 'reservations'],
+    		chunks: ['vendors', 'reservations'],
             template: './src/reservations-past.html',
             minify: false
 		}),
@@ -110,7 +107,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 		    filename: 'signup.html',
 		    cache: false,
-    		chunks: ['commons', 'signup'],
+    		chunks: ['vendors', 'signup'],
             template: './src/signup.html',
             minify: false
 		}),
@@ -118,7 +115,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 		    filename: 'text.html',
 		    cache: false,
-    		chunks: ['commons', 'text'],
+    		chunks: ['vendors', 'text'],
             template: './src/text.html',
             minify: false
 		})
@@ -126,9 +123,15 @@ module.exports = {
 	
 	optimization: {
         namedModules: true, // NamedModulesPlugin()
-        splitChunks: { // CommonsChunkPlugin()
-            name: 'commons',
-            minChunks: 2
+        splitChunks: {
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    enforce: true,
+                    chunks: 'all'
+                }
+            }
         },
         noEmitOnErrors: true, // NoEmitOnErrorsPlugin
         concatenateModules: true //ModuleConcatenationPlugin

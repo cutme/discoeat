@@ -1,6 +1,7 @@
 .c-sidebar {
     @include z-index(sidebar);
     @extend %antialias;
+    @extend %anim;
     position: fixed;
     left: 0; top: 0;
     width: 246px; height: 100%;
@@ -8,6 +9,18 @@
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5);
     padding: 24px 16px;
     font-weight: $regular;
+    overflow: auto;
+	-webkit-overflow-scrolling: touch;
+
+    @media screen and ( max-width: $tablet + px ) {
+        transform: translate3d(-105%, 0, 0);
+    }
+    
+    .mobile-menu & {
+        box-shadow: none;
+        transform: translate3d(0, 0, 0);
+    }
+    
 
     &__logo {
         display: block;
@@ -15,7 +28,11 @@
     }
 
     &__nav {
-        margin-bottom: 150px;
+        margin-bottom: 20px;
+        
+        @media screen and ( min-height: 640px ) {
+            margin-bottom: 150px;
+        }
 
         > ul {
             > li {
@@ -119,8 +136,6 @@
     }
     
     &__emergency {
-        color: $c-black2;
-        
-        
+        color: $c-black2;        
     }
 }

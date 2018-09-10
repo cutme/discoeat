@@ -4,6 +4,14 @@
     background-color: white;
     padding: 70px 100px 60px 100px;
     
+    @media screen and ( max-width: $tablet_portrait + px ) {
+        padding: 70px grid(100, 768) 60px grid(100, 768);
+    }
+    
+    @media screen and ( max-width: $smartphone_portrait + px ) {
+        padding: 60px 20px;
+    }
+    
     &__close {
         @extend %abs;
         display: block;
@@ -57,6 +65,10 @@
         width: 436px;
         margin: 0 auto 30px auto;
         padding: 0 15px;
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            width: 100%;
+        }
 
         .o-select {
             margin-bottom: 30px;

@@ -1,15 +1,18 @@
 .c-breadcrumbs {
+    @extend %anim;
     margin-bottom: 60px;
-
-    a {
-        //@extend %ulink;
-        //color: $c-red1;
-        
-        &:after, &:before {
-           // bottom: -1px;
-         //   background-color: $c-red1;
-        }
+    
+    @media screen and ( max-width: $tablet_portrait + px ) {
+        font-size: rem(12);
     }
+
+    @media screen and ( max-width: $smartphone_portrait + px ) {
+        font-size: rem(10);
+    } 
+    
+    @media screen and ( max-width: 375px ) {
+        display: none;
+    }    
     
     a {
         @extend %rel;

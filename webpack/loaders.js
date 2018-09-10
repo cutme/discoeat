@@ -36,7 +36,7 @@ const CSSLoader = {
 const css = {
     test: /\.scss$/,
     use: [
-        MiniCssExtractPlugin.loader,
+        devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
         'happypack/loader?id=scss'
     ]
 };
