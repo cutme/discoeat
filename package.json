@@ -37,7 +37,7 @@
         "webpack-dev-server": "^3.1.7"
     },
     "scripts": {
-        "dev": "NODE_ENV=developer webpack-dev-server --config webpack/webpack.dev.js",
+        "dev": "NODE_ENV=developer webpack-dev-server --host 0.0.0.0 --config webpack/webpack.dev.js",
         "prod": "npm run clean && NODE_ENV=production webpack -p --config webpack/webpack.prod.js",
         "clean": "rimraf ./dist/*"
     },

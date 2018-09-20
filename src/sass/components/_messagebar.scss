@@ -2,7 +2,7 @@
     @extend %anim;
     @include z-index(messagebar);
     @extend %flex;
-    @extend %flex-x;
+    @extend %flex-xy;
     position: fixed;
     left: 0; bottom: 0;
     width: 100%;
@@ -11,6 +11,18 @@
     transition-delay: 300ms;
     transform: translate3d(0, 100%, 0);
     
+    @media screen and ( max-width: $base + px ) {
+        padding: get-vw-base(20) 20px;
+    }
+    
+    @media screen and ( max-width: $tablet_portrait + px ) {
+        padding: get-vw-base(20) 15px;
+    }
+    
+    @media screen and ( max-width: $smartphone + px ) {
+        text-align: left;
+    }
+    
     .pace-done & {
         transform: translate3d(0, 0, 0);
     }
@@ -18,6 +30,19 @@
     p {
         margin-right: 20px;
         font-size: rem(20);
+        
+        @media screen and ( max-width: $base + px ) {
+            font-size: get-vw-base(20);
+        }
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            font-size: get-vw-tablet-portrait(20);
+        }
+        
+        @media screen and ( max-width: $smartphone + px ) {
+            font-size: get-vw-smartphone(20);
+        }
+        
     }
     
     &__slide {
